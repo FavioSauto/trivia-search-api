@@ -1,0 +1,51 @@
+.TriviaList
+  width 80%
+  min-height calc(100vh - 60px)
+  padding 20px 20px
+  margin 20px 10% 0 10%
+  background white
+  box-shadow 0 2px 6px 0 gray
+  border-radius 20px
+  display grid
+  grid-template-columns repeat(3, 1fr)
+  gap 20px
+
+  .TriviaList-title
+    max-height 60px
+
+  .TriviaList-form
+    max-height 60px
+    display flex
+    justify-content space-between
+    flex-wrap wrap
+    grid-column-end span 2
+
+    .TriviaList-formGroup
+      margin-bottom 10px
+
+      label
+        font-weight bold
+    
+    button.TriviaList-buttonFormControl
+      height 30px
+      cursor pointer
+      padding 0 5px
+      background #034078
+      outline none
+      border none
+      border-radius 5px
+      color white
+      font-weight semi-bold
+      font-size 1rem
+
+@media screen and (max-width: 1840px)
+  .TriviaList
+    grid-template-columns repeat(2, 1fr)
+
+@media screen and (max-width: 1240px)
+  .TriviaList
+    grid-template-columns repeat(1, 1fr)
+
+    .TriviaList-form
+      max-height none
+      grid-column-end span 1
