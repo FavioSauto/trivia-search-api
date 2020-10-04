@@ -7,6 +7,9 @@ import TriviaCard from './TriviaCard';
 // styles
 import '../styles/TriviaList.styl';
 
+// initialState
+import initialQuestions from '../initialQuestions';
+
 function TriviaList() {
   const [API, setAPI] = useState(
     'https://opentdb.com/api.php?amount=10&category=&type=&difficulty='
@@ -18,8 +21,8 @@ function TriviaList() {
     type: ''
   });
   const [searchWord, setSearchWord] = useState('');
-  const [questions, setQuestions] = useState([]);
-  const [displayQuestions, setDisplayQuestions] = useState([]);
+  const [questions, setQuestions] = useState(initialQuestions.questions);
+  const [displayQuestions, setDisplayQuestions] = useState(questions);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -30,7 +33,7 @@ function TriviaList() {
         setDisplayQuestions(data.results);
         setLoading(false);
       })
-      .catch(error => console.log(eror));
+      .catch(error => console.log(error));
   }, [API]);
 
   return (
@@ -124,26 +127,31 @@ function TriviaList() {
             onChange={handleSearch}
             type="text"
             name="words"
+            id="words"
             className="FormControl"
             value={searchWord}
           />
         </div>
 
-        <button className="TriviaList-buttonFormControl">
+        <button
+          className="TriviaList-buttonFormControl"
+          id="btn-searchNew"
+          onClick={handleSearch}
+        >
           Search New Trivia
         </button>
-        <button className="TriviaList-buttonFormControl" onClick={handleReset}>
+        <button
+          className="TriviaList-buttonFormControl"
+          id="btn-resetTrivia"
+          onClick={handleReset}
+        >
           Reset
         </button>
       </form>
 
-      {loading ? (
-        <PageLoading />
-      ) : (
-        displayQuestions.map((question, index) => (
-          <TriviaCard key={index} question={question} />
-        ))
-      )}
+      {displayQuestions.map((question, index) => (
+        <TriviaCard key={index} question={question} />
+      ))}
     </div>
   );
 

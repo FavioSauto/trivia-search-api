@@ -36,7 +36,14 @@ function TriviaCard(props) {
 
       <div className="TriviaCard-answers-container">
         {answers.map((answer, index) => (
-          <p className="TriviaCard-answer">{answer}</p>
+          <p
+            key={index}
+            className={`TriviaCard-answer ${
+              answer === correct_answer ? 'correct' : 'incorrect'
+            }`}
+          >
+            {answer}
+          </p>
         ))}
       </div>
     </div>

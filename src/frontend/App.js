@@ -6,10 +6,10 @@ import TriviaList from './components/TriviaList';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <TriviaList />
-    </div>
+    </>
   );
 }
 
