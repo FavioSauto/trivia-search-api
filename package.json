@@ -4,8 +4,8 @@
   "description": "This is a project where one can search and answer trivia questions",
   "main": "index.js",
   "scripts": {
-    "both:dev": "nodemon src/server/index.js --exact babel-node",
-    "both:prod": "node src/server/index.js",
+    "dev": "nodemon src/server/index.js --exact babel-node",
+    "start": "node src/server/index.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
