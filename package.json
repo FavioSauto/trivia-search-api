@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FavioSauto/trivia-search-api.git"
+    "url": "https://github.com/FavioSauto/trivia-search-api.git"
   },
   "keywords": [
     "trivia",
