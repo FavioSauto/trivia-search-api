@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server/index.js --exact babel-node",
-    "start": "node src/server/index.js",
+    "start": "webpack --config webpack.config.js && node src/server/index.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
@@ -69,5 +69,8 @@
     "moduleNameMapper": {
       "\\.(styl|css)$": "<rootDir>/src/__mocks__/styleMock.js"
     }
+  },
+  "engines": {
+    "node": "14.3.0"
   }
 }
