@@ -1,25 +1,11 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import { create } from 'react-test-renderer';
-import QuestionMock from '../../__mocks__/QuestionMock';
 import App from '../../App';
 import Header from '../../components/Header';
 import TriviaList from '../../components/TriviaList';
-import TriviaCard from '../../components/TriviaCard';
+import puppeteer from 'puppeteer'
 
-// describe('<App />', () => {
-//   test('Component TriviaList render', () => {
-//     const triviaList = shallow(<TriviaList />);
 
-//     expect(triviaList.length).toEqual(1);
-//   });
-
-//   test('Component TriviaList Title', () => {
-//     const wrapper = shallow(<TriviaList />);
-
-//     const title = wrapper.find('h2.TriviaList-title');
-//     expect(title.text()).toMatch('Questions');
-// });
 
 describe('App Snapshot', () => {
   test('App Snapshot', () => {
@@ -33,3 +19,16 @@ describe('App Snapshot', () => {
     expect(triviaList.toJSON()).toMatchSnapshot();
   });
 });
+
+describe("E2E", () => {
+  test('Should filter', async () => {
+    const browser = await puppeteer.launch({
+      headless:false,
+      slowMo: 80,
+      args:['--windows-size=1920,1080']
+    })
+
+    const page = await browser.newPage();
+    await page.goto('D:/Documents/Trabajos/Platzi/prueba/trivia-search-api/index.html');
+  }, 10000)
+})
