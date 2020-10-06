@@ -16,7 +16,8 @@ is one input tag of type number to select the amount of questions you want.
 Once you have selected all the filters you want you press the "Search new 
 trivia" button. From those questions you can search if any one of them have 
 a word or question you want, this is because you can't directly asks for a 
-specific trivia question to the API.
+specific trivia question to the API. If you want to reset the fields and 
+options chosed you can always click on the "reset" button.
 
 This app has server side rendering with nodejs and express and it renders 
 the html from there, if you have no internet connection or your browser's 
