@@ -40,7 +40,7 @@ function TriviaList() {
     <div className="TriviaList">
       <h2 className="TriviaList-title">Questions</h2>
 
-      <form onSubmit={handleSubmit} className="TriviaList-form">
+      <form onSubmit={handleSubmit} className="TriviaList-form" id="filterForm">
         <div className="TriviaList-formGroup">
           <label htmlFor="amount">Number of questions: </label>
           <input
