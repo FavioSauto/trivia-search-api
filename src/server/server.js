@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const ENV = process.env.NODE_ENV;
 const app = express();
 
-app.use(express.static(`${__dirname}/client`));
+app.use(express.static(`${__dirname}/build`));
 
 if (ENV === 'development') {
   const webpackConfig = require('../../webpack.config');

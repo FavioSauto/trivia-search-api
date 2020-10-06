@@ -12,7 +12,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src/frontend/index.js'),
   mode: process.env.NODE_ENV,
   output: {
-    path: isProd ? path.join(process.cwd(), './src/server/client') : '/',
+    path: isProd ? path.join(process.cwd(), './src/server/build') : '/',
     filename: 'assets/app.js',
     publicPath: '/'
   },
