@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import App from '../frontend/App';
-import initialQuestions from '../frontend/initialQuestions';
 import { renderToString } from 'react-dom/server';
 
 require('dotenv').config();
